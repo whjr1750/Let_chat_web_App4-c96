@@ -22,7 +22,7 @@ var firebaseConfig = {
       }
       
       function send(){
-      msg = doument.getElementById("msg").value;
+      msg = document.getElementById("msg").value; //corected the document spelling here
       firebase.database().ref(room_name).push({
       name: user_name, 
       message: msg,
@@ -41,8 +41,8 @@ message = message_data['message'];
 like = message_data['like'];
 namewithtag = "<h4>" + name1 + "<img class = 'user_tick' src ='tick.png'></h4>";
 messagewithtag = "<h4 class = 'message_h4'>" + message + "</h4>";
-
-like_button = "<button class = 'btn btn-warning' id =" + firebase_message_id + " value ="+like+" onclick = 'updatelike(this.id)'></button>";
+ 
+like_button = "<button class='btn btn-warning' id='"+firebase_message_id+"' value='"+like+"' onclick='updateLike(this.id)'>"; //updated code here
 span_with_tag = "<span class = 'glyphicon glyphicon-thumbs-up'>Like: " + like + "</span></button><hr>";
 
 row = namewithtag + messagewithtag + like_button + span_with_tag;
